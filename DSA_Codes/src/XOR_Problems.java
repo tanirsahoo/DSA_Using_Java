@@ -55,10 +55,12 @@ class operations{
                     count[i] += 1 ;
             }
         }
-
-        
-
-
+        int res = 0 ;
+        for(int i = 0 ; i < int_size ; i ++){
+            res = res + ((count[i] % num_rep) * (1 << i)) ;
+        }
+        res = res / (ar.length % num_rep) ;
+        System.out.println("The Unique element is: " + res);
     }
     void decimalToBinary(int n) {
         if (n < 0) {
@@ -86,9 +88,10 @@ public class XOR_Problems {
             System.out.println("Enter the element at index: " + i);
             arr[i] = sc.nextInt() ;
         }
-//        int arr[] = {7 , 9 , 8 , 2 , 9 , 7 , 4 , 8} ;
+//        int arr[] = {6, 2, 5, 2, 2, 6, 6} ;
         operations ob = new operations(arr) ;
         ob.one_non_repeating(arr) ;
         ob.two_non_repeating(arr);
+        ob.one_non_repeating_present_thrice(arr , 3);
     }
 }
