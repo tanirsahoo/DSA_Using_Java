@@ -8,6 +8,8 @@ Step 3: Click on the src folder.<br>
 # Repository creator:
 ## Tanir Sahoo
 
-<u>Disclaimer</u>: This repository contains codes for almost all the important algorithms performed using an Object Oriented Programming Language - Java. C Programmers might face difficulty in understanding the concept but are recommended to follow the comments provided in the code in case of any discrepancy.
+```
+Disclaimer: This repository contains codes for almost all the important algorithms performed using an Object Oriented Programming Language - Java. C Programmers might face difficulty in understanding the concept but are recommended to follow the comments provided in the code in case of any discrepancy.
+```
 
 ## Thank You
