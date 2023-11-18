@@ -12,14 +12,14 @@ class operations{
     operations(int[] p){
             this.ar = p;
     }
-    void one_non_repeating(int[] ar){
+    void one_non_repeating(int[] ar){ // Solution to Question Number 1.
         int v = 0 ;
         for(int i = 0 ; i < ar.length ; i ++)
             v = v ^ ar[i] ;
         System.out.println("The only non-repeating element inside the array is: " + v);
     }
 
-    void two_non_repeating(int[] ar){
+    void two_non_repeating(int[] ar){ // Solution to Question Number 2.
         int v = 0 ;
         for(int i = 0 ; i < ar.length ; i ++)
             v = v ^ ar[i] ;
@@ -43,6 +43,22 @@ class operations{
                 }
             }
             System.out.println("The two numbers are: " + k1 + " and " + k2) ;
+    }
+    void one_non_repeating_present_thrice(int[] ar , int num_rep){ // Solution to Question Number 3.
+        byte size_int = 4 ;
+        int int_size = 8 * size_int ;
+        int count[] = new int[int_size] ;
+
+        for(int i = 0 ; i < int_size ; i ++){
+            for(int j = 0 ; j < ar.length ; j ++){
+                if((ar[j] & (1 << i)) != 0)
+                    count[i] += 1 ;
+            }
+        }
+
+        
+
+
     }
     void decimalToBinary(int n) {
         if (n < 0) {
