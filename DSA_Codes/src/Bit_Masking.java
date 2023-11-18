@@ -37,6 +37,17 @@ class operation{
                 break ;
         }
     }
+
+    void check_bits(int n){
+        int count = 0 ;
+        while((n & (n-1)) > 0){
+            count ++ ;
+            n = n & (n - 1) ;
+            System.out.println("The value of n is: " + n) ;
+            decimalToBinary(n);
+        }
+        System.out.println("The number of bits present in the given number is: " + n) ;
+    }
     void decimalToBinary(int n) {
         if (n < 0) {
             System.out.println("Error: n must be a non-negative integer");
@@ -69,6 +80,10 @@ public class Bit_Masking {
         System.out.println("Enter your choice for the following operations:\n1: Setting the value to 1.\n2. Setting the value to 0.") ;
         int choice = sc.nextInt() ;
         ob.set(ind , choice) ;
+        System.out.println("Enter the number you want to check the number of bits.") ;
+        int n = sc.nextInt() ;
+        ob.decimalToBinary(n);
+        ob.check_bits(n);
     }
 }
 
