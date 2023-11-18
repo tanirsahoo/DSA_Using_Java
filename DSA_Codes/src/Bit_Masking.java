@@ -23,17 +23,34 @@ class operation{
         switch(ch){
             case 1:
                 int new_val = a | k ;
+                decimalToBinary(new_val);
                 System.out.println("Therefore the new number after changing the bit is: " + new_val);
                 break ;
             case 2:
                 k = ~k ;
                 int new_val2 = a | k ;
+                decimalToBinary(new_val2);
                 System.out.println("Therefore the new number after changing the bit is: " + new_val2);
                 break ;
             default:
                 System.out.println("You have entered a Wrong Choice.");
                 break ;
         }
+    }
+
+
+    void decimalToBinary(int n) {
+        if (n < 0) {
+            System.out.println("Error: n must be a non-negative integer");
+            return;
+        }
+        String binary = "";
+        while (n > 0) {
+            binary = binary + n % 2;
+            n /= 2;
+        }
+        binary = new StringBuilder(binary).reverse().toString();
+        System.out.println("The binary representation of " + n + " is " + binary);
     }
 }
 public class Bit_Masking {
@@ -43,12 +60,13 @@ public class Bit_Masking {
         System.out.println("Enter the number.");
         num = sc.nextInt() ;
         operation ob = new operation(num) ;
+        ob.decimalToBinary(num) ;
         System.out.println("+++++++++++++++++++Finding the bit at i'th position+++++++++++++++++++") ;
         System.out.println("Enter the index at which you want to check the bit.");
         int index = sc.nextInt() ;
         ob.find(index) ;
         System.out.println("+++++++++++++++++++Setting the bit at i'th position+++++++++++++++++++") ;
-        System.out.println("Enter the index at which you set the bit.");
+        System.out.println("Enter the index at which you want to set the bit.");
         int ind = sc.nextInt() ;
         System.out.println("Enter your choice for the following operations:\n1: Setting the value to 1.\n2. Setting the value to 0.") ;
         int choice = sc.nextInt() ;
