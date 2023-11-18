@@ -26,7 +26,9 @@ class operation{
                 System.out.println("Therefore the new number after changing the bit is: " + new_val);
                 break ;
             case 2:
-                System.out.println("Working on it.");
+                k = ~k ;
+                int new_val2 = a | k ;
+                System.out.println("Therefore the new number after changing the bit is: " + new_val2);
                 break ;
             default:
                 System.out.println("You have entered a Wrong Choice.");
