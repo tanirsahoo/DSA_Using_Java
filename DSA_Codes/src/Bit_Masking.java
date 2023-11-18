@@ -71,3 +71,13 @@ public class Bit_Masking {
         ob.set(ind , choice) ;
     }
 }
+
+
+/*
+* Important Notes:
+* 1. Trick to calculate the number of bits in any given number. Suppose the given number is n, then to calculate the number of bits we need to calculate |log(n)| of that number and add 1 to the result. Therefore the final result is: |log(n)| + 1 ;
+*    Example: Suppose n = 13 ;
+*             then log(13) = 3.7004 ;
+*             |log(13)| = 3 ;
+*             Number of bits = 3 + 1 = 4 ;
+* */
