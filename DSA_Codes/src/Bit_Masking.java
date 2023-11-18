@@ -37,8 +37,6 @@ class operation{
                 break ;
         }
     }
-
-
     void decimalToBinary(int n) {
         if (n < 0) {
             System.out.println("Error: n must be a non-negative integer");
