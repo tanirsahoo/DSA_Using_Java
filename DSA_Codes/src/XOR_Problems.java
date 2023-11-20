@@ -90,8 +90,15 @@ public class XOR_Problems {
         }
 //        int arr[] = {6, 2, 5, 2, 2, 6, 6} ;
         operations ob = new operations(arr) ;
-        ob.one_non_repeating(arr) ;
-        ob.two_non_repeating(arr);
-        ob.one_non_repeating_present_thrice(arr , 3);
+        System.out.println("Enter your choice:\n1.Solution to Question 1\n2.Solution to Question 2\n3.Solution to Question 3");
+        int ch = sc.nextInt() ;
+        if(ch == 1)
+            ob.one_non_repeating(arr) ;
+        else if(ch == 2)
+            ob.two_non_repeating(arr);
+        else if(ch == 3)
+            ob.one_non_repeating_present_thrice(arr , 3);
+        else
+            System.out.println("Wrong Choice.");
     }
 }
