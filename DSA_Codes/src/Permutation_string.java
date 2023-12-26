@@ -8,6 +8,7 @@
            ab   a  b   ""     -->> Adding b or "" to every element
           /\   /\  /\   /\
       abc  ab ac a bc b c ""  -->> Adding c or "" to every element
+3. Print all permutations of a given string: 
 */
 package DSA_Codes.src;
 
@@ -22,6 +23,15 @@ class string_work{
         else
             return palindrome_string(a , (l - 1) , (f + 1)) ;
     }
+
+    public void power_set_string(String src , int index , String cr){
+        if(index == src.length()){
+            System.out.println(cr);
+            return ;
+        }
+        power_set_string(src , index + 1 , cr + src.charAt(index));
+        power_set_string(src , index + 1 , cr);
+    }
 }
 public class Permutation_string {
     public static void main(String[] args) {
@@ -29,11 +39,12 @@ public class Permutation_string {
         Scanner sc = new Scanner(System.in) ;
         System.out.println("Enter the String.");
         String a = sc.nextLine() ;
-        int len = a.length() ;
-        boolean result = ob.palindrome_string(a , len - 1 , 0) ;
-        if(result == true)
-            System.out.println("Palindrome String");
-        else
-            System.out.println("Not a palindrome String");
+//        int len = a.length() ;
+//        boolean result = ob.palindrome_string(a , len - 1 , 0) ;
+//        if(result == true)
+//            System.out.println("Palindrome String");
+//        else
+//            System.out.println("Not a palindrome String");
+        ob.power_set_string(a , 0 , "");
     }
 }
