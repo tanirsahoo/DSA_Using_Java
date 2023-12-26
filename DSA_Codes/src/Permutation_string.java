@@ -3,5 +3,29 @@
 */
 package DSA_Codes.src;
 
+import java.util.Scanner;
+
+class string_work{
+    public boolean palindrome_string(String a, int l , int f){
+        if(f >= l)
+            return true ;
+        else if(a.charAt(l) != a.charAt(f))
+            return false ;
+        else
+            return palindrome_string(a , (l - 1) , (f + 1)) ;
+    }
+}
 public class Permutation_string {
+    public static void main(String[] args) {
+        string_work ob = new string_work() ;
+        Scanner sc = new Scanner(System.in) ;
+        System.out.println("Enter the String.");
+        String a = sc.nextLine() ;
+        int len = a.length() ;
+        boolean result = ob.palindrome_string(a , len - 1 , 0) ;
+        if(result == true)
+            System.out.println("Palindrome String");
+        else
+            System.out.println("Not a palindrome String");
+    }
 }
