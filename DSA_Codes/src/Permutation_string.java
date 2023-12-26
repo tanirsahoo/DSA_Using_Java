@@ -1,5 +1,13 @@
 /*
 1. Palindrome String: A Palindrome string is a string which when reversed gives the exact same output.
+2. Superset of a string: To find all the possible combinations that could be framed from a given string. For example: abc = {"" , a , b , c , ab , bc , ac , abc}
+   Now:         abc
+                /\
+               a  ""
+             /  \   /\
+           ab   a  b   ""
+          /\   /\  /\   /\
+      abc  ab ac a bc b c ""
 */
 package DSA_Codes.src;
 
