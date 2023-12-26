@@ -5,9 +5,9 @@
                 /\
                a  ""
              /  \   /\
-           ab   a  b   ""
+           ab   a  b   ""     -->> Adding b or "" to every element
           /\   /\  /\   /\
-      abc  ab ac a bc b c ""
+      abc  ab ac a bc b c ""  -->> Adding c or "" to every element
 */
 package DSA_Codes.src;
 
