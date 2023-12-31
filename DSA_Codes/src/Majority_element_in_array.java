@@ -18,8 +18,29 @@ public class Majority_element_in_array {
         }
         int start_index = 0 ;
         int cnt = 1 ;
-        for(int i = 0 ; i < n ; i ++){
-            
+        for(int i = 1 ; i < n ; i ++){
+            if(ar[i] == ar[start_index]) {
+                cnt ++;
+//                start_index ++ ;
+            }
+            else{
+                cnt -- ;
+            }
+            if(cnt == 0){
+                start_index = i ;
+                cnt = 1 ;
+            }
+        }
+        if(cnt > 0){
+            cnt = 0 ;
+            for (int i = 0 ; i < n ; i ++){
+                if(ar[i] == ar[start_index])
+                    cnt ++ ;
+            }
+            if(cnt > (n / 2))
+                System.out.println("The majority element is: " + ar[start_index]);
+            else
+                System.out.println("There is no majority element in the array.");
         }
     }
 }
