@@ -6,7 +6,7 @@ package DSA_Codes.src;
 
 import java.util.Scanner;
 
-public class Majority_element_in_array {
+public class Moores_Voting_Algo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in) ;
         System.out.println("Enter the number of elements you want to have in the array.");
