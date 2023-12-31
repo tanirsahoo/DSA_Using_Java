@@ -1,6 +1,6 @@
 /*
 1. N-Queen Problem: N-Queen problem states that we need to place N-Queens in an N X N matrix such that no queen interrupts the movement of other queen.
-2. Sudoku Solver:
+2. Sudoku Solver: The user needs to enter an array which would contain some already filled numbers and zeros depicting void places. The algorithm needs to identify the most suitable element for the place.
 */
 package DSA_Codes.src;
 
