@@ -3,6 +3,7 @@ package DSA_Codes.src;
 import java.util.Scanner;
 
 class merge_algo{
+    
 }
 
 public class Merge_sort {
