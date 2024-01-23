@@ -44,14 +44,16 @@ class min_range{
 public class Books_allocation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in) ;
-        System.out.println("Enter the number of elements you want to have inside that array.");
-        int n = sc.nextInt() ;
-        int[] ar = new int[n];
-        for(int i = 0 ; i < n ; i ++){
-            System.out.println("Enter the element at index: " + (i + 1));
-            ar[i] = sc.nextInt() ;
-        }
+//        System.out.println("Enter the number of elements you want to have inside that array.");
+//        int n = sc.nextInt() ;
+//        int[] ar = new int[n];
+//        for(int i = 0 ; i < n ; i ++){
+//            System.out.println("Enter the element at index: " + (i + 1));
+//            ar[i] = sc.nextInt() ;
+//        }
+        int[] ar = {10 , 10 , 20 , 30} ;
         min_range ob = new min_range() ;
         int ans = ob.minpages(ar , 2) ;
+        System.out.println("Minimum value alloted to the first student is: " + ans);
     }
 }
