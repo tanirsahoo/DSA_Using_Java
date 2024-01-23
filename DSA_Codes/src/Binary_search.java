@@ -26,6 +26,19 @@ class search_algo{
                     return find_element_index_recursion(ar, n, mb + 1, ub);
         }
     }
+
+    public int infinite_sorted_array(int ar[] , int key){
+        /*
+        In this algorithm we are trying to find an element from an infinite array of elements by exponentially increasing the value of high and finding the possible range inside of which we could find that number.
+         */
+        int low = 0 ;
+        int high = 1 ;
+        while(ar[high] < key){
+            low = high ;
+            high = 2 * high ;
+        }
+        return find_element_index_recursion(ar , key , low , high) ;
+    }
 }
 public class Binary_search {
     public static void main(String[] args) {
