@@ -39,6 +39,27 @@ class search_algo{
         }
         return find_element_index_recursion(ar , key , low , high) ;
     }
+
+    public int element_rotated_array(int ar[] , int key){
+        int lb = 0 , ub = ar.length ;
+        while(lb <= ub){
+            int mb = (lb + ub) / 2 ;
+            if(ar[mb] == key)
+                return mb ;
+            else if(ar[lb] < ar[mb]){
+                if(key > ar[lb] && key <= ar[ub])
+                    ub = mb - 1 ;
+                else
+                    lb = mb + 1 ;
+            }
+            else{
+                if(key > ar[mb] && key <= ar[mb])
+                    lb = mb + 1 ;
+                else ub = mb - 1 ;
+            }
+        }
+        return -1 ;
+    }
 }
 public class Binary_search {
     public static void main(String[] args) {
