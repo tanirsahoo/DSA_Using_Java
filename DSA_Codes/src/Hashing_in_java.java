@@ -1,3 +1,12 @@
+/*
+In this question we have performed 3 operations:
+1. Count Distict elements in an array.
+2. Union of two arrays.
+3. Intersection of two arrays.
+All the above operations have been performed using set and hashset library of java.
+ */
+
+
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
