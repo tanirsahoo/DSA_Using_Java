@@ -20,6 +20,20 @@ class hashing_function {
         }
         return set2.size() ;
     }
+    public int intersection_of_two_array(int[] a , int[] b){
+        Set<Integer> set = new HashSet<>() ;
+        int count = 0 ;
+        for(int items:a){
+            set.add(items) ;
+        }
+        for(int items:b){
+            if(set.contains(items)){
+                count ++ ;
+                set.remove(items) ;
+            }
+        }
+        return count ;
+    }
 }
 
 public class Hashing_in_java {
