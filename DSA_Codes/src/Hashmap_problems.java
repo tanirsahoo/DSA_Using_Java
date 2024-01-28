@@ -26,6 +26,10 @@ class SubArray_sum{
         else
             System.out.println("Sub Array Found from index: " + start + " to: " + end);
     }
+
+    void int count_distict_elem_in window(int[] ar){
+
+    }
 }
 
 public class Hashmap_problems {
