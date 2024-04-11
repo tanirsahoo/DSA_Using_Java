@@ -23,10 +23,6 @@ class heap_actions{
                 ar[Math.abs(id / 2)] = elem;
                 ar[id] = swap_var;
                 id = Math.abs(id / 2);
-//                ar[Math.abs(id / 2)] = ar[id] ^ ar[Math.abs(id / 2)] ;
-//                ar[id] = ar[id] ^ ar[Math.abs(id / 2)] ;
-//                ar[Math.abs(id / 2)] = ar[id] ^ ar[Math.abs(id / 2)] ;
-//                id = Math.abs(id / 2) ;
             }
         }
     }
@@ -37,21 +33,6 @@ class heap_actions{
         int index = 1 ;
         while((((index * 2) <= size) || ((index * 2 + 1) <= size)) && (ar[index * 2] > ar[index] || ar[index * 2 + 1] > ar[index])){
             int larger = ar[index * 2] > ar[index * 2 + 1] ? (index * 2) : (index * 2 + 1) ;
-//            if(ar[index * 2] > ar[index]){
-//                int swap_var = ar[index * 2];
-//                ar[index * 2] = ar[index];
-//                ar[index] = swap_var ;
-//                index = index * 2 ;
-//            }
-//            else if(ar[index * 2 + 1] > ar[index]){
-//                int swap_var = ar[index * 2 + 1];
-//                ar[index * 2 + 1] = ar[index];
-//                ar[index] = swap_var ;
-//                index = index * 2 + 1 ;
-//            }
-//            else{
-//                break ;
-//            }
             if(ar[index] < ar[larger]){
                 int swap_var = ar[larger] ;
                 ar[larger] = ar[index] ;
@@ -65,12 +46,6 @@ class heap_actions{
         return extract ;
     }
     public void display(int[] ar , int len){
-//        for(int i = 0 ; i < ar.length ; i ++){
-//            for(int j = 1 ; j <= (Math.pow(2 , i)) ; j ++){
-//                System.out.print(ar[i ++]);
-//            }
-//            System.out.println();
-//        }
         for(int i = 1 ; i <= len ; i ++){
             System.out.print(ar[i] + " ");
         }
