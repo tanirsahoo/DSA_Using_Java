@@ -15,32 +15,53 @@ class heap_actions{
         int id = index ;
         while(elem > ar[Math.abs(id / 2)]){
             //Swapping the values of elem and ar[Math.abs(id / 2)]
-//            ar[Math.abs(id / 2)] = ar[id] ^ ar[Math.abs(id / 2)] ;
-//            ar[id] = ar[id] ^ ar[Math.abs(id / 2)] ;
-//            ar[Math.abs(id / 2)] = ar[id] ^ ar[Math.abs(id / 2)] ;
             if(Math.abs(id/2) == 0){
                 break;
             }
             else {
-//                int swap_var = ar[Math.abs(id / 2)];
-//                ar[Math.abs(id / 2)] = elem;
-//                ar[id] = swap_var;
-//                id = Math.abs(id / 2);
-                ar[Math.abs(id / 2)] = ar[id] ^ ar[Math.abs(id / 2)] ;
-                ar[id] = ar[id] ^ ar[Math.abs(id / 2)] ;
-                ar[Math.abs(id / 2)] = ar[id] ^ ar[Math.abs(id / 2)] ;
-                id = Math.abs(id / 2) ;
+                int swap_var = ar[Math.abs(id / 2)];
+                ar[Math.abs(id / 2)] = elem;
+                ar[id] = swap_var;
+                id = Math.abs(id / 2);
+//                ar[Math.abs(id / 2)] = ar[id] ^ ar[Math.abs(id / 2)] ;
+//                ar[id] = ar[id] ^ ar[Math.abs(id / 2)] ;
+//                ar[Math.abs(id / 2)] = ar[id] ^ ar[Math.abs(id / 2)] ;
+//                id = Math.abs(id / 2) ;
             }
         }
     }
-    public void display(int[] ar){
+
+    public int delete_element(int[] ar , int size){
+        int extract = ar[1] ;
+        ar[1] = ar[size] ;
+        int index = 1 ;
+        while(ar[index * 2] > ar[index] || ar[index * 2 + 1] > ar[index]){
+            if(ar[index * 2] > ar[index]){
+                int swap_var = ar[index * 2];
+                ar[index * 2] = ar[index];
+                ar[index] = swap_var ;
+                index = index * 2 ;
+            }
+            else if(ar[index * 2 + 1] > ar[index]){
+                int swap_var = ar[index * 2 + 1];
+                ar[index * 2 + 1] = ar[index];
+                ar[index] = swap_var ;
+                index = index * 2 + 1 ;
+            }
+            else{
+                break ;
+            }
+        }
+        return extract ;
+    }
+    public void display(int[] ar , int len){
 //        for(int i = 0 ; i < ar.length ; i ++){
 //            for(int j = 1 ; j <= (Math.pow(2 , i)) ; j ++){
 //                System.out.print(ar[i ++]);
 //            }
 //            System.out.println();
 //        }
-        for(int i = 0 ; i < ar.length ; i ++){
+        for(int i = 1 ; i <= len ; i ++){
             System.out.print(ar[i] + " ");
         }
         System.out.println();
@@ -55,11 +76,27 @@ public class Heap_program {
         int[] ar = new int[n + 1];
         int insert_index = 0;
         ar[0] = -1;
+        int num = n ;
         while(n -- != 0) {
             System.out.println("Enter the element you want to insert inside the heap.");
             int elem = sc.nextInt();
             ob.insert_element(ar, elem, ++ insert_index);
-            ob.display(ar);
+            ob.display(ar , insert_index);
+        }
+        int ch = 1 ;
+        while(ch == 1) {
+            System.out.println("Enter any number other than 1 to terminate deletion");
+            ch = sc.nextInt() ;
+            if(ch == 1 && insert_index > 0) {
+                int del_elem = ob.delete_element(ar, num);
+                insert_index -- ;
+                System.out.println("The deleted element is: " + del_elem);
+                System.out.println("Value of insert index: " + insert_index);
+                ob.display(ar , insert_index);
+            }
+            else{
+                break ;
+            }
         }
     }
 }
