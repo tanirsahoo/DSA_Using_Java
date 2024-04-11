@@ -65,8 +65,6 @@ public class heap_sort {
             System.out.println("Enter the element at index: " + i);
             ar[i] = sc.nextInt() ;
         }
-//        int ar[] = {-1 , 6 , 8 , 2 , 4 , 16 , 19 , 13 , 11 , 20} ;
-//        int n = ar.length - 1;
         heap_sort_algorithm ob = new heap_sort_algorithm() ;
         ar = ob.heapsort(ar , n) ;
         ob.display(ar , n);
