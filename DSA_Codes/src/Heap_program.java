@@ -35,18 +35,28 @@ class heap_actions{
         int extract = ar[1] ;
         ar[1] = ar[size] ;
         int index = 1 ;
-        while(ar[index * 2] > ar[index] || ar[index * 2 + 1] > ar[index]){
-            if(ar[index * 2] > ar[index]){
-                int swap_var = ar[index * 2];
-                ar[index * 2] = ar[index];
+        while((((index * 2) <= size) || ((index * 2 + 1) <= size)) && (ar[index * 2] > ar[index] || ar[index * 2 + 1] > ar[index])){
+            int larger = ar[index * 2] > ar[index * 2 + 1] ? (index * 2) : (index * 2 + 1) ;
+//            if(ar[index * 2] > ar[index]){
+//                int swap_var = ar[index * 2];
+//                ar[index * 2] = ar[index];
+//                ar[index] = swap_var ;
+//                index = index * 2 ;
+//            }
+//            else if(ar[index * 2 + 1] > ar[index]){
+//                int swap_var = ar[index * 2 + 1];
+//                ar[index * 2 + 1] = ar[index];
+//                ar[index] = swap_var ;
+//                index = index * 2 + 1 ;
+//            }
+//            else{
+//                break ;
+//            }
+            if(ar[index] < ar[larger]){
+                int swap_var = ar[larger] ;
+                ar[larger] = ar[index] ;
                 ar[index] = swap_var ;
-                index = index * 2 ;
-            }
-            else if(ar[index * 2 + 1] > ar[index]){
-                int swap_var = ar[index * 2 + 1];
-                ar[index * 2 + 1] = ar[index];
-                ar[index] = swap_var ;
-                index = index * 2 + 1 ;
+                index = larger ;
             }
             else{
                 break ;
@@ -88,7 +98,7 @@ public class Heap_program {
             System.out.println("Enter any number other than 1 to terminate deletion");
             ch = sc.nextInt() ;
             if(ch == 1 && insert_index > 0) {
-                int del_elem = ob.delete_element(ar, num);
+                int del_elem = ob.delete_element(ar, num --);
                 insert_index -- ;
                 System.out.println("The deleted element is: " + del_elem);
                 System.out.println("Value of insert index: " + insert_index);
