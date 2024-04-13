@@ -1,4 +1,4 @@
-//Applying heap sort algorithm to sort an array in descending order
+//Applying heap sort algorithm to sort an array in ascending order
 
 import java.util.Scanner;
 
@@ -47,7 +47,7 @@ class heap_sort_algorithm{
         return ar ;
     }
     public void display(int[] ar , int n){
-        for(int i = n ; i > 0 ; i --){
+        for(int i = 0 ; i <= n ; i ++){
             System.out.print(ar[i] + " ");
         }
         System.out.println();
