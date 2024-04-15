@@ -31,7 +31,7 @@ public class Linked_List {
         Scanner sc = new Scanner(System.in) ;
         System.out.println("Enter the data inside the head node.");
         int data = sc.nextInt() ;
-        node<Integer> n1 = new node<Integer>(data) ;
+        node<Integer> n1 = new node<>(data) ;
         n1.nextnode = null ;
         node<Integer> n2 = n1 ;
         int ch = 1 ;
