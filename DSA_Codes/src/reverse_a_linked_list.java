@@ -30,6 +30,18 @@ class reverse_list{
         return curr ;
     }
 
+    public numbo<Integer> recursive_approach(numbo<Integer> head_node){
+        if(head_node == null || head_node.nextnd == null){
+            return head_node ;
+        }
+        numbo<Integer> newhead = recursive_approach(head_node.nextnd) ;
+        numbo<Integer> nextnode = head_node.nextnd ;
+        nextnode.nextnd = head_node ;
+        head_node.nextnd = null ;
+        return newhead ;
+    }
+
+
     public void display_list(numbo<Integer> head_node){
         numbo<Integer> nd = head_node ;
         do{
@@ -66,7 +78,8 @@ public class reverse_a_linked_list {
         System.out.println("Initial Linked List:");
         ob.display_list(n2);
         System.out.println("After reversing the list:");
-        n2 = ob.iterative_approach(n2) ;
+//        n2 = ob.iterative_approach(n2) ;
+        n2 = ob.recursive_approach(n2) ;
         ob.display_list(n2);
     }
 }
