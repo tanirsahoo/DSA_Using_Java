@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-class numbo<Dtype>{
-    Dtype data ;
-    numbo<Dtype> nextnd ;
-    numbo(<Dtype> data){
+class numbo<DType>{
+    DType data ;
+    numbo<DType> nextnd ;
+    numbo(DType data){
         this.data = data ;
     }
 }
