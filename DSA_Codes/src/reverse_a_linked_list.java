@@ -22,11 +22,12 @@ class reverse_list{
                 prev = curr ;
                 curr = reference ;
             }
+            curr.nextnd = prev ;
         }
         else{
             prev = curr ;
         }
-        return prev ;
+        return curr ;
     }
 
     public void display_list(numbo<Integer> head_node){
@@ -34,7 +35,7 @@ class reverse_list{
         do{
             System.out.println("The elements are: " + nd.data);
             nd = nd.nextnd ;
-        }while(nd.nextnd != null) ;
+        }while(nd != null) ;
     }
 }
 
