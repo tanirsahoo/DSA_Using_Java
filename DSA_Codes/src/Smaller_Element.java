@@ -15,7 +15,7 @@ public class Smaller_Element{
                 break ;
             ar.add(ch) ;
         }
-        stack_implementation_ArrayList ob = new stack_implementation_ArrayList() ; //I have created an object of Stack_Implementation.java that I coded earlier.
+        stack_implementation_ArrayList ob = new stack_implementation_ArrayList() ;// I have created an object of Stack_Implementation.java that I coded earlier.
         for(int i = 0 ; i < ar.size() ; i ++){
             if(i == 0){
                 nearest_small.add(-1) ;
