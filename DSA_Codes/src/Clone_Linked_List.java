@@ -26,12 +26,6 @@ class clone_work{
         two_node<Integer> orig = head ;
         two_node<Integer> copy = head.nextnd ;
         two_node<Integer> temp = copy ;
-//        while(orig != null){
-//            orig.nextnd = orig.nextnd.nextnd ;
-//            copy.nextnd = copy.nextnd.nextnd ;
-//            orig = orig.nextnd ;
-//            copy = copy.nextnd ;
-//        }
         while(copy.nextnd != null){
             orig.nextnd = orig.nextnd.nextnd ;
             copy.nextnd = copy.nextnd.nextnd ;

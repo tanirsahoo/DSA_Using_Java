@@ -4,8 +4,6 @@ If a cycle exists, the fast pointer will eventually overtake the slow pointer. B
 the cycle's starting point can be found. This algorithm offers a time complexity of O(n) and uses constant extra space.
 * */
 
-import java.sql.SQLOutput;
-
 class nod<DType>{
     DType data ;
     nod nextnd ;
