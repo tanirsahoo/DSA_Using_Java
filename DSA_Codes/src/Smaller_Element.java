@@ -22,7 +22,7 @@ public class Smaller_Element{
                 ob.push(ar.get(i));
             }
             else{
-                while(ar.get(i) < ob.peek()){
+                while(ar.get(i) < ob.peek()){ // Checking for nearest smaller element, by changing (ar.get(i) > ob.peek()) we can make the operation nearest largest element
                     int p = ob.pop() ;
                 }
                 nearest_small.add(ob.peek()) ;
