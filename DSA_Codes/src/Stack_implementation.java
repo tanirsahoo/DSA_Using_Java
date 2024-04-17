@@ -81,11 +81,15 @@ class stack_implementation_ArrayList{
             return elem ;
         }
     }
-    public void peek(){
-        if (top == -1)
+    public int peek(){
+        if (top == -1) {
             System.out.println("No element found inside the array.");
-        else
-            System.out.println("The Element is: " + ar.get(top));
+            return -1;
+        }
+        else {
+//            System.out.println("The Element is: " + ar.get(top));
+            return ar.get(top) ;
+        }
     }
     public void display_elems(){
         for(int i = 0 ; i <= top ; i ++)
@@ -109,7 +113,8 @@ class stack_implementation_ArrayList{
                 else
                     System.out.println("The Popped element is: " + p);
             } else if (ch == 3) {
-                ob.peek();
+                int pk = ob.peek() ;
+                System.out.println("The Element is: " + pk);// pk is a dummy variable I have set to use this code in Smaller_Element.java
             } else if (ch == 4) {
                 ob.display_elems();
             } else
@@ -200,10 +205,10 @@ class stack_implementation_LinkedList {
 }
 public class Stack_implementation {
     public static void main(String[] args) {
-        stack_implementation_array ob = new stack_implementation_array() ;
+//        stack_implementation_array ob = new stack_implementation_array() ;
         stack_implementation_ArrayList ob2 = new stack_implementation_ArrayList() ;
-        stack_implementation_LinkedList ob3 = new stack_implementation_LinkedList() ;
-//        ob.operate_stack();
-        ob3.operate_stack();
+//        stack_implementation_LinkedList ob3 = new stack_implementation_LinkedList() ;
+        ob2.operate_stack();
+//        ob3.operate_stack();
     }
 }
