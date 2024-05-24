@@ -19,7 +19,10 @@ public class Largest_area_submatrix {
         return max_height ;
     }
     public static void main(String[] args) {
-        int[][] ar = {{0 , 1 , 1 , 1 , 1 , 0} , {1 , 1 , 1 , 1 , 0 , 1} , {1 , 1 , 0 , 1 , 1 , 1} , {1 , 1 , 1 , 1 , 1 , 0}} ;
+        int[][] ar = {{0 , 1 , 1 , 1 , 1 , 0} ,
+                      {1 , 1 , 1 , 1 , 0 , 1} ,
+                      {1 , 1 , 0 , 1 , 1 , 1} ,
+                      {1 , 1 , 1 , 1 , 1 , 0}} ;
         int max_area = largest_area(ar) ;
         System.out.println("Largest Area is: " + max_area);
     }
