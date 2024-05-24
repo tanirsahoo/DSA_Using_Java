@@ -51,7 +51,11 @@ class smaller_element_find{
         }
         return ps ;
     }
-    public int largest_rectangle(int[] ar){
+    public int largest_rectangle(int[] arr){
+        int[] ar = new int[arr.length] ;
+        for(int i = 0 ; i < arr.length ; i ++){
+            ar[i] = arr[i] ;
+        }
         int[] ns = next_smaller_element(ar) ;
         int[] ps = previous_smaller_element(ar) ;
         int max = Integer.MIN_VALUE ;
