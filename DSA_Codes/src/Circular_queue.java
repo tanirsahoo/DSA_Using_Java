@@ -60,7 +60,6 @@ public class Circular_queue {
         }
     }
     public static void main(String[] args) {
-//        ArrayList<Integer> ar = new ArrayList<>();
         int[] ar = new int[4] ;
         int ch ;
         Scanner sc = new Scanner(System.in) ;
