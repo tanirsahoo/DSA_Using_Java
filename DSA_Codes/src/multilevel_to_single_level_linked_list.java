@@ -7,20 +7,54 @@ class nd_ag<DType>{
     nd_ag<DType> child_nd ;
 }
 
-//class linear_node<DType>{
-//    DType data ;
-//    linear_node<DType> next_node ;
-//}
-
 class flatten_linked_list{
     public nd_ag<Integer> node_head_return(nd_ag<Integer> node){
         Queue<nd_ag> q = new ArrayDeque<>() ;
         nd_ag<Integer> head = node;
-        while(head.next_nd != null){
+        nd_ag<Integer> clone = new nd_ag<>() ;
+        node = clone ;
+        while(head != null){
             if(head.child_nd != null)
                 q.offer(head.child_nd) ;
+            clone.data = head.data ;
+            clone.child_nd = null ;
+            clone.next_nd = head.next_nd ;
+            head = head.next_nd ;
+            if(head != null) {
+                nd_ag<Integer> new_node = new nd_ag<>();
+                clone.next_nd = new_node ;
+                clone = clone.next_nd ;
+            }
         }
-        return head ;
+        while(!q.isEmpty()){
+            nd_ag<Integer> ref = q.poll() ;
+            nd_ag<Integer> new_node = new nd_ag<>();
+            clone.next_nd = new_node ;
+            clone = clone.next_nd ;
+            clone.data = ref.data ;
+            clone.child_nd = null ;
+            while(ref != null){
+                if(ref.child_nd != null)
+                    q.offer(ref.child_nd) ;
+                clone.data = ref.data ;
+                clone.child_nd = null ;
+                clone.next_nd = ref.next_nd ;
+                ref = ref.next_nd ;
+                if(ref != null) {
+                    nd_ag<Integer> new_nde = new nd_ag<>();
+                    clone.next_nd = new_nde ;
+                    clone = clone.next_nd ;
+                }
+            }
+        }
+        return node ;
+    }
+    public void display(nd_ag<Integer> clone){
+        while(clone != null){
+            System.out.print(clone.data + " ");
+            clone = clone.next_nd ;
+        }
+        System.out.println();
     }
 }
 
@@ -112,5 +146,9 @@ public class multilevel_to_single_level_linked_list {
 
         nd17.next_nd = null ;
         nd17.child_nd = null ;
+
+        flatten_linked_list ob = new flatten_linked_list() ;
+        nd_ag<Integer> headnode = ob.node_head_return(nd1) ;
+        ob.display(headnode);
     }
 }
