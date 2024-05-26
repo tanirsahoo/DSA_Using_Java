@@ -56,6 +56,27 @@ class flatten_linked_list{
         }
         System.out.println();
     }
+    public void node_head_return_constant_space(nd_ag<Integer> node){
+        nd_ag<Integer> last = node.next_nd ;
+        nd_ag<Integer> current = node ;
+        while(current != null && last != null) {
+           do{
+                System.out.print(node.data + " ");
+                last = last.next_nd;
+                node = node.next_nd ;
+            }while (last != null) ;
+            while (current != null && current.child_nd == null) {
+                current = current.next_nd;
+            }
+            if(current != null) {
+                node.next_nd = current.child_nd;
+                current = current.next_nd;
+            }
+            last = node.next_nd ;
+        }
+        System.out.print(node.data + " ");
+        System.out.println();
+    }
 }
 
 public class multilevel_to_single_level_linked_list {
@@ -148,7 +169,8 @@ public class multilevel_to_single_level_linked_list {
         nd17.child_nd = null ;
 
         flatten_linked_list ob = new flatten_linked_list() ;
-        nd_ag<Integer> headnode = ob.node_head_return(nd1) ;
-        ob.display(headnode);
+//        nd_ag<Integer> headnode = ob.node_head_return(nd1) ;
+//        ob.display(headnode);
+        ob.node_head_return_constant_space(nd1);
     }
 }
