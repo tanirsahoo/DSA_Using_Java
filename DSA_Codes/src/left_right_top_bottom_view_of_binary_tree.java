@@ -95,7 +95,9 @@ public class left_right_top_bottom_view_of_binary_tree {
             }
             qu.poll() ;
         }
-        for (int item: ht.keySet()) {
+        ArrayList<Integer> ar = new ArrayList<>(ht.keySet()) ;
+        Collections.sort(ar) ;
+        for (int item: ar) {
             System.out.print(ht.get(item).data + " ");
         }
         System.out.println();
