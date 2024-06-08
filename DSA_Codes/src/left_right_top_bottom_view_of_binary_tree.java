@@ -102,6 +102,32 @@ public class left_right_top_bottom_view_of_binary_tree {
         }
         System.out.println();
     }
+    private static void bottom_view(node_tree head){
+        HashMap<Integer , node_tree> ht = new HashMap<>() ;
+        Queue<horizon_dist> qu = new LinkedList<>() ;
+        horizon_dist hd = new horizon_dist(0 , head) ;
+        qu.add(hd) ;
+        ht.put(hd.horiz_val , hd.node) ;
+        while (!qu.isEmpty()){
+            if(qu.peek().node.left_child != null) {
+                hd = new horizon_dist(qu.peek().horiz_val - 1 , qu.peek().node.left_child) ;
+                qu.add(hd);
+                ht.put((hd.horiz_val) , hd.node) ;
+            }
+            if(qu.peek().node.right_child != null) {
+                hd = new horizon_dist(qu.peek().horiz_val + 1 , qu.peek().node.right_child) ;
+                qu.add(hd) ;
+                ht.put((hd.horiz_val) , hd.node) ;
+            }
+            qu.poll() ;
+        }
+        ArrayList<Integer> ar = new ArrayList<>(ht.keySet()) ;
+        Collections.sort(ar) ;
+        for (int item: ar) {
+            System.out.print(ht.get(item).data + " ");
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         node_tree<Integer> head = new node_tree<>(15) ;
         node_tree<Integer> nd1 = new node_tree<>(20) ;
@@ -141,5 +167,7 @@ public class left_right_top_bottom_view_of_binary_tree {
         right_view(head);
         System.out.println("===============================");
         top_view(head) ;
+        System.out.println("===============================");
+        bottom_view(head);
     }
 }
