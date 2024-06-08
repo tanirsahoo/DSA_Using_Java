@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class left_and_right_view {
+public class left_right_top_bottom_view_of_binary_tree {
 
     private static void left_view(node_tree head){
         HashMap<Integer , node_tree> h = new HashMap<>() ;
