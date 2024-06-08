@@ -64,7 +64,9 @@ public class Lowest_common_ancester_in_binary_tree {
         int n1 = Integer.parseInt(br.readLine()) ;
         System.out.println("Enter the value of Second Node: ");
         int n2 = Integer.parseInt(br.readLine()) ;
-
-        System.out.println("Ancester Node of N1 and N2 is: " + ancester_node(head , n1 , n2).data);
+        if(ancester_node(head , n1 , n2) != null)
+            System.out.println("Ancester Node of N1 and N2 is: " + ancester_node(head , n1 , n2).data);
+        else
+            System.out.println("No such node as N1 and N2");
     }
 }
