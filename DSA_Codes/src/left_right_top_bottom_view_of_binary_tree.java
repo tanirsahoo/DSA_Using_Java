@@ -7,9 +7,18 @@
 //  -->    29                 <--
 
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
+
+class horizon_dist{
+    int horiz_val ;
+    node_tree node ;
+
+    public horizon_dist(int horiz_val, node_tree node) {
+        this.horiz_val = horiz_val;
+        this.node = node;
+    }
+
+}
 
 public class left_right_top_bottom_view_of_binary_tree {
 
@@ -63,6 +72,32 @@ public class left_right_top_bottom_view_of_binary_tree {
         for(int k = 0 ; k < i ; k ++)
             System.out.println(h.get(k).data + " ");
     }
+    private static void top_view(node_tree head){
+        HashMap<Integer , node_tree> ht = new HashMap<>() ;
+        Queue<horizon_dist> qu = new LinkedList<>() ;
+        horizon_dist hd = new horizon_dist(0 , head) ;
+        qu.add(hd) ;
+        ht.put(hd.horiz_val , hd.node) ;
+        while (!qu.isEmpty()){
+            if(qu.peek().node.left_child != null) {
+                hd = new horizon_dist(qu.peek().horiz_val + 1 , qu.peek().node.left_child) ;
+                qu.add(hd);
+                if(ht.get(hd.horiz_val) == null){
+                    ht.put((hd.horiz_val) , hd.node) ;
+                }
+            }
+            if(qu.peek().node.right_child != null) {
+                hd = new horizon_dist(qu.peek().horiz_val - 1 , qu.peek().node.right_child) ;
+                qu.add(hd);
+                if(ht.get(hd.horiz_val) == null){
+                    ht.put((hd.horiz_val) , hd.node) ;
+                }
+            }
+            System.out.print(qu.peek().node.data + " ");
+            qu.poll() ;
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         node_tree<Integer> head = new node_tree<>(15) ;
         node_tree<Integer> nd1 = new node_tree<>(20) ;
@@ -100,5 +135,7 @@ public class left_right_top_bottom_view_of_binary_tree {
         left_view(head);
         System.out.println("===============================");
         right_view(head);
+        System.out.println("===============================");
+        top_view(head) ;
     }
 }
