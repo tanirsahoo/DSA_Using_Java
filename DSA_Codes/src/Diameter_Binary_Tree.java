@@ -13,13 +13,22 @@ public class Diameter_Binary_Tree {
             return 0 ;
         return Math.max(height(head.left_child) , height(head.right_child)) + 1 ;
     }
-    private static int diameter(node_tree head){
+    private static int diameter(node_tree head){ //The time complexity for this function is O(n^2)
         if(head == null)
             return 0 ;
         int d1 = diameter(head.left_child) ;
         int d2 = diameter(head.right_child) ;
-        int ht = height(head.left_child) + height(head.right_child) ;
+        int ht = height(head.left_child) + height(head.right_child) + 1 ;
         return Math.max(ht , Math.max(d1 , d2)) ;
+    }
+    private static int ans = 0 ;
+    private static int dia_in_n(node_tree head){ // The time complexity for this function is O(n)
+        if(head == null)
+            return 0 ;
+        int l1 = dia_in_n(head.left_child) ;
+        int l2 = dia_in_n(head.right_child) ;
+        ans = Math.max(ans, (1 + l1 + l2)) ;
+        return 1 + Math.max(l1 , l2) ;
     }
     public static void main(String[] args) {
         node_tree<Integer> head = new node_tree<>(15) ;
@@ -55,6 +64,8 @@ public class Diameter_Binary_Tree {
         nd7.left_child = null ;
         nd7.right_child = null ;
 
-        System.out.println("The Diameter is: " + diameter(head));
+//        System.out.println("The Diameter is (Number of nodes in the longest path): " + diameter(head));
+        dia_in_n(head) ;
+        System.out.println("The Diameter is (Number of nodes in the longest path): " + ans);
     }
 }
