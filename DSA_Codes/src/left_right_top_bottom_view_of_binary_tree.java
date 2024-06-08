@@ -80,21 +80,23 @@ public class left_right_top_bottom_view_of_binary_tree {
         ht.put(hd.horiz_val , hd.node) ;
         while (!qu.isEmpty()){
             if(qu.peek().node.left_child != null) {
-                hd = new horizon_dist(qu.peek().horiz_val + 1 , qu.peek().node.left_child) ;
+                hd = new horizon_dist(qu.peek().horiz_val - 1 , qu.peek().node.left_child) ;
                 qu.add(hd);
                 if(ht.get(hd.horiz_val) == null){
                     ht.put((hd.horiz_val) , hd.node) ;
                 }
             }
             if(qu.peek().node.right_child != null) {
-                hd = new horizon_dist(qu.peek().horiz_val - 1 , qu.peek().node.right_child) ;
+                hd = new horizon_dist(qu.peek().horiz_val + 1 , qu.peek().node.right_child) ;
                 qu.add(hd);
                 if(ht.get(hd.horiz_val) == null){
                     ht.put((hd.horiz_val) , hd.node) ;
                 }
             }
-            System.out.print(qu.peek().node.data + " ");
             qu.poll() ;
+        }
+        for (int item: ht.keySet()) {
+            System.out.print(ht.get(item).data + " ");
         }
         System.out.println();
     }
