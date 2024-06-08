@@ -1,4 +1,26 @@
+//            15
+//            /\
+//          20  19
+//         /\    /\
+//       42 26  35 38
+//       /
+//      29
+
 public class Diameter_Binary_Tree {
+
+    private static int height(node_tree head){
+        if(head == null)
+            return 0 ;
+        return Math.max(height(head.left_child) , height(head.right_child)) + 1 ;
+    }
+    private static int diameter(node_tree head){
+        if(head == null)
+            return 0 ;
+        int d1 = diameter(head.left_child) ;
+        int d2 = diameter(head.right_child) ;
+        int ht = height(head.left_child) + height(head.right_child) ;
+        return Math.max(ht , Math.max(d1 , d2)) ;
+    }
     public static void main(String[] args) {
         node_tree<Integer> head = new node_tree<>(15) ;
         node_tree<Integer> nd1 = new node_tree<>(20) ;
@@ -32,5 +54,7 @@ public class Diameter_Binary_Tree {
 
         nd7.left_child = null ;
         nd7.right_child = null ;
+
+        System.out.println("The Diameter is: " + diameter(head));
     }
 }
