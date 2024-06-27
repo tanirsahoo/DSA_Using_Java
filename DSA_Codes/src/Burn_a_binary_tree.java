@@ -22,6 +22,12 @@ public class Burn_a_binary_tree {
         find_time(root , target , depth) ;
         return ans + 1 ;
     }
+    public static int find_height(node_tree head){
+        if(head == null)
+            return 0 ;
+        else
+            return Math.max(find_height(head.left_child) , find_height(head.right_child)) + 1 ;
+    }
     public static int find_time(node_tree<Integer> head , int target , data_t dat){
         if(head == null){
             return -1 ;
@@ -86,6 +92,9 @@ public class Burn_a_binary_tree {
         System.out.println("Enter the element you want to start burning from.");
         Scanner sc = new Scanner(System.in) ;
         int element = sc.nextInt() ;
-        System.out.println("Time to burn the binary tree is: " + minTime(head , element)) ;
+        if(head.data == element)
+            System.out.println("Time to burn the binary tree is: " + find_height(head));
+        else
+            System.out.println("Time to burn the binary tree is: " + minTime(head , element)) ;
     }
 }
