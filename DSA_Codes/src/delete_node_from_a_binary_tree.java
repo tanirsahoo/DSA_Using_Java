@@ -130,6 +130,6 @@ public class delete_node_from_a_binary_tree {
         nd5.right_child = nd8 ;
 
         node_tree<Integer> index =  head;
-        head = delete_node(head , 50) ;
+        head = delete_node(head , 20) ;
     }
 }
