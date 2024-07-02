@@ -6,6 +6,21 @@
 //              /\
 //            29  35
 public class is_Binary_Search_Tree {
+    static node_tree<Integer> prev = null;
+    public static boolean check_BST(node_tree<Integer> head){
+        if(head != null){
+            if(!check_BST(head.left_child)){
+                return false ;
+            }
+            if(prev != null && head.data <= prev.data)
+                return false ;
+            prev = head ;
+            return check_BST(head.right_child) ;
+        }
+        else{
+            return true ;
+        }
+    }
     public static void main(String[] args) {
         node_tree<Integer> head = new node_tree<>(20) ;
         node_tree<Integer> nd1 = new node_tree<>(10) ;
@@ -28,5 +43,6 @@ public class is_Binary_Search_Tree {
 
         nd5.left_child = nd7 ;
         nd5.right_child = nd8 ;
+        System.out.println("Is the given tree a BST?: " + check_BST(head));
     }
 }
