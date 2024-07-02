@@ -91,8 +91,8 @@ public class floor_and_ceil_in_BST {
             System.out.println("The Ceil Value is: " + floor_val2.data);
         }
         else {
-            System.out.println("The Floor Value is: " + Integer.MIN_VALUE);
-            System.out.println("The Ceil Value is: " + Integer.MAX_VALUE);
+            System.out.println("The Floor Value is: " + Integer.MAX_VALUE);
+            System.out.println("The Ceil Value is: " + Integer.MIN_VALUE);
         }
     }
 }
