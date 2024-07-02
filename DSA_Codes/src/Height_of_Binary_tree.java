@@ -12,6 +12,8 @@ class node_tree<DType>{
     node_tree<DType> right_child ;
     node_tree(DType dat){
         this.data = dat ;
+        this.left_child = null ;
+        this.right_child = null ;
     }
 }
 
