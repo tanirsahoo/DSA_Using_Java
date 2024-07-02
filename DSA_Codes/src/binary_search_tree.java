@@ -10,7 +10,7 @@ class nd_tre<DType>{
     }
 }
 class operations_on_bst{
-    public static nd_tre find_insert_index(nd_tre<Integer> head , int elem){
+    public static nd_tre find_insert_index(nd_tre<Integer> head , int elem){ // Recursive Approach
         if(head.left_nd == null && head.right_nd == null)
             return head ;
         else if((head.data > elem) && (head.left_nd != null)) {
@@ -21,9 +21,30 @@ class operations_on_bst{
         else
             return head ;
     }
+
+    public static nd_tre find_index(nd_tre<Integer> head , int elem){ // Iterative Approach
+        nd_tre<Integer> node = head ;
+        nd_tre<Integer> fin = null ;
+        while(node != null){
+            if(node.data < elem){
+                fin = node ;
+                node = node.right_nd ;
+            }
+            else if(node.data > elem){
+                fin = node ;
+                node = node.left_nd ;
+            }
+            else{
+                fin = node ;
+                break ;
+            }
+        }
+        return fin ;
+    }
     public static nd_tre insertion(nd_tre<Integer> head , int elem){
         nd_tre hd = head ;
-        nd_tre<Integer> index = find_insert_index(hd , elem) ;
+//        nd_tre<Integer> index = find_insert_index(hd , elem) ;
+        nd_tre<Integer> index = find_index(hd , elem) ;
         nd_tre node = new nd_tre(elem) ;
         if(index.data == elem)
             return head ;
