@@ -50,6 +50,7 @@ public class delete_node_from_a_binary_tree {
             nd = nd.right_child ;
         }
         head = delete_node(head , nd.data) ;
+        modified_node node_new = new modified_node(nd.data , head) ;
         return nd.data ;
     }
     public static node_tree delete_node(node_tree<Integer> head , int dat){
