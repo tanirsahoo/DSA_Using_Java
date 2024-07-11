@@ -26,6 +26,6 @@ public class Dynamic_Method_Dispatch {
     public static void main(String[] args) {
         Phone ob = new Smartphone() ;
         ob.ring();
-        ob.call();
+        ob.call(); // The call function of the child will get executed.
     }
 }
