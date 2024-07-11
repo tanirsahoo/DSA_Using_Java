@@ -12,7 +12,7 @@ abstract class Animal{
     public void eat(){
         System.out.println("It can eat");
     }
-    abstract public void fly() ;
+    abstract protected void fly() ;
 
     public static void main(String[] args) {
         Deer ob = new Deer() ;
@@ -22,7 +22,7 @@ abstract class Animal{
     }
 }
 class Deer extends Animal{
-    public void fly(){
+    protected void fly(){
         System.out.println("Deers can't fly");
     }
 }
@@ -42,7 +42,7 @@ public class Abstract_class {
             }
 
             @Override
-            public void fly() {
+            protected void fly() {
                 System.out.println("Yes the Bird can fly");
             }
         } ;
