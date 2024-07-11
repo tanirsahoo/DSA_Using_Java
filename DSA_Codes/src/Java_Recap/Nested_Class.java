@@ -23,7 +23,7 @@ public class Nested_Class {
 
     public static void main(String[] args) {
         Nested_Class obb = new Nested_Class() ;
-        Nested_Class.inner_class o = obb.new inner_class(){ // This is an Anonymous Class -- Anonymous classes can't be static
+        Nested_Class.inner_class o = obb.new inner_class(){ // This is an Anonymous Class -- Anonymous classes can't have static methods.
             protected void display_weirdos(){
                 System.out.println("Here is the modified String that I am going to display inside the anonymous class.");
             }
