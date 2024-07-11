@@ -1,6 +1,7 @@
 package Java_Recap;
 
-public class Parent_class extends child1{
+//Note that in java no cyclic inheritance is allowed
+public class Parent_class{
     private int a ;
     private String b ;
     private float d ;
