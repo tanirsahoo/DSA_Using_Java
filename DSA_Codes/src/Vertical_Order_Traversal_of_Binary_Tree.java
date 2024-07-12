@@ -25,11 +25,8 @@ public class Vertical_Order_Traversal_of_Binary_Tree {
         Map<Integer , ArrayList> mp = new HashMap<>() ;
         Queue<node_treat> q = new LinkedList<>() ;
         node_treat nd = new node_treat(0 , head) ;
-//        ArrayList<Integer> a = new ArrayList<>() ;
         if(head != null) {
             q.add(nd);
-//            a.add(head.data) ;
-//            mp.put(0 , a) ;
         }
         while(!q.isEmpty()){
             node_treat n = q.poll() ;

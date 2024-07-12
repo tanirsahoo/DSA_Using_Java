@@ -2,8 +2,8 @@ import java.util.Scanner ;
 
 class nd_tre<DType>{
     DType data;
-    nd_tre<DType> left_nd ;
-    nd_tre<DType> right_nd ;
+    nd_tre<DType> left_nd = null;
+    nd_tre<DType> right_nd = null;
 
     public nd_tre(DType data) {
         this.data = data;
