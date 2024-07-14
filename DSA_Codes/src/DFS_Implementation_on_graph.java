@@ -1,49 +1,36 @@
-import javax.management.QueryEval;
 import java.util.* ;
 
-class itm_nd<DType>{
-    DType data ;
-    itm_nd<DType> cld_node1 = null ;
-    itm_nd<DType> cld_node2 = null;
-    itm_nd<DType> cld_node3 = null;
-    itm_nd<DType> cld_node4 = null;
+public class DFS_Implementation_on_graph {
 
-    public itm_nd(DType data) {
-        this.data = data;
-    }
-}
-
-public class BFS_implementation_on_graph {
-    private static void breadth_first_search(itm_nd<Integer> head , int item){
-        Queue<itm_nd<Integer>> dq = new LinkedList<>() ;
+    private static void dfs_algo(itm_nd<Integer> head , int item){
         Set<Integer> st = new HashSet<>() ;
-        dq.add(head) ;
-        st.add(head.data) ;
-        while(!dq.isEmpty()){
-            if(head.cld_node1 != null && !st.contains(head.cld_node1.data)) {
-                dq.add(head.cld_node1);
-                st.add(head.cld_node1.data) ;
+        boolean found = dfs_recursion(head , item , st) ;
+        if(found)
+            System.out.println("Element Found");
+        else
+            System.out.println("Element not Found");
+    }
+    private static boolean dfs_recursion(itm_nd<Integer> head , int item , Set<Integer> st){
+        if(head == null)
+            return false ;
+        else {
+            st.add(head.data) ;
+            if (head.data == item)
+                return true;
+            else if (head.cld_node1 != null && !st.contains(head.cld_node1.data) && dfs_recursion(head.cld_node1, item, st)) {
+                return true;
+            } else if (head.cld_node2 != null && !st.contains(head.cld_node2.data) && dfs_recursion(head.cld_node2, item, st)) {
+                return true;
+            } else if (head.cld_node3 != null && !st.contains(head.cld_node3.data) && dfs_recursion(head.cld_node3, item, st)) {
+                return true;
+            } else if (head.cld_node4 != null && !st.contains(head.cld_node4.data) && dfs_recursion(head.cld_node4, item, st)) {
+                return true;
+            } else {
+                return false;
             }
-            if(head.cld_node2 != null && !st.contains(head.cld_node2.data)) {
-                dq.add(head.cld_node2);
-                st.add(head.cld_node2.data) ;
-            }
-            if(head.cld_node3 != null && !st.contains(head.cld_node3.data)) {
-                dq.add(head.cld_node3);
-                st.add(head.cld_node3.data) ;
-            }
-            if(head.cld_node4 != null && !st.contains(head.cld_node4.data)) {
-                dq.add(head.cld_node4);
-                st.add(head.cld_node4.data) ;
-            }
-            if(dq.peek().data == item){
-                System.out.println("Element Found.");
-                break ;
-            }
-            dq.poll() ;
-            head = dq.peek() ;
         }
     }
+
     public static void main(String[] args) {
         itm_nd<Integer> head = new itm_nd<>(10) ;
         itm_nd<Integer> cld1 = new itm_nd<>(15) ;
@@ -114,6 +101,6 @@ public class BFS_implementation_on_graph {
         cld22.cld_node1 = head21 ;
         cld23.cld_node1 = head21 ;
 
-        breadth_first_search(head , 99) ;
+        dfs_algo(head , 19) ;
     }
 }
